@@ -1,0 +1,16 @@
+
+
+// Fonts
+$title-font: 'Roboto', sans-serif;
+$default-font: 'Arial', sans-serif;
+
+
+// Imports
+@import '_reset';
+@import '_mixins';
+@import '_default';
+@import '_header';
+@import '_home';
+@import '_footer';
+@import '_detailsMovie';
+

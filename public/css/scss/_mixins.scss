@@ -1,0 +1,28 @@
+@use "sass:math"; // opération math pour convertir les px en rem , une mixin ne renvoie pas de valeur de retour
+
+/** Font size convert **/
+@function calculateRem($size) {
+    $remSize: math.div($size, 16px);
+    @return #{$remSize}rem;
+}
+
+@mixin fontSize($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
+
+@mixin button {
+    border-radius: 20px;
+    color:var(--background-color);
+    font-size: 20px;
+    padding: 10px 20px;
+    line-height: 1.45em;
+    background-color: var(--primary-color);
+
+
+    &:hover,
+    &:focus{
+        background-color: var(--active-color);
+    }
+}
+

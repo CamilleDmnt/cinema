@@ -1,0 +1,21 @@
+RewriteEngine on
+
+#remove end slash
+#redirection même avec lle slash
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+
+#force HTTPS - décommenter cette ligne quand on le mettra en ligne
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+#redirect to public folder
+#pour rediriger l'user dans le dossier public
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ /public/$1 [L]
+
+#redirect to index.php
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule . index.php [L]

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock%}</title>
+
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <header id="header">
+        <div class= "wrapper">
+            <!-- logo Fantastic films -->
+            <div id="logo">
+                 <a href="{{ getUrl('home') }}"> 
+                    <img src="../../image/header/new-logo.png" alt="Fantastic Films" width="211" height="158">
+                </a>
+            </div>
+            <!-- barre de recherche -->
+            <div id="search-bar">
+                <form action="" method="get">
+                    <input type="text" name="search" id="search" placeholder="Recherchez votre film">
+                    <a href="" id="search-button">
+                        <img src="../../image/header/loupe.png" alt="Rechercher" width="30" height="30"> 
+                    </a>
+                             
+                </form>
+            </div>
+            <!-- liens vers Connexion et inscription -->
+            <div id="login-links">
+                <img src ="../../image/header/user.png" alt=connexion width="40" height="40"> 
+                <a href=" {{ getUrl('login') }}" alt="connexion"> Connexion | Inscription</a>
+            </div>
+        </div>
+    </header>
+    <!-- menu / Je laisse les href vides car je les autres pages n'existent pas encore-->
+    <div id="bottom-header">
+        <nav class="wrapper" >
+            <ul>
+                <li> 
+                    <a href="" alt="">À la une</a>
+                </li>
+                <li>
+                    <a href="" alt="">Thématiques</a>
+                </li>
+                <li> 
+                    <a href="" alt="">Presse</a>
+                </li>
+                <li>
+                    <a href="" alt="">Interviews</a>
+                </li>
+                <li>
+                    <a href="" alt="">Avis des internautes</a>
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+
+    {% block content %}{% endblock%}
+
+    <footer>
+        <div class="wrapper">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="">Mentions légales</a>
+                    </li>
+                    <li>
+                        <a href="" >Paramètres cookies</a>
+                    </li>
+                    <li>
+                        <a href="">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <ul>
+                <li>
+                    <a href="" target="_blank" >
+                        <img src ="../../image/footer/facebook.png" alt="facebook" height="30" width="30">
+                    </a>
+                </li>
+                <li>
+                    <a href="" target="_blank">
+                        <img src ="../../image/footer/instagram.png" alt="facebook" height="30" width="30">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
